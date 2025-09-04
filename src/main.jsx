@@ -1,13 +1,26 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
+
+// ! ----- Components ----- !
+
+import PageNotFound from "./components/PageNotFound.jsx";
 import App from "./App.jsx";
+
+// ! ----- Styles ----- !
+
+import "./index.css";
+
+//! ---------------------- !
 
 const router = createBrowserRouter([
    {
       path: "/",
       element: <App />,
+   },
+   {
+      path: "*",
+      element: <PageNotFound />,
    },
 ]);
 
