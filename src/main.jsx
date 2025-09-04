@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // ! ----- Components ----- !
 
 import PageNotFound from "./components/PageNotFound.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import App from "./App.jsx";
 
 // ! ----- Styles ----- !
@@ -17,6 +18,12 @@ const router = createBrowserRouter([
    {
       path: "/",
       element: <App />,
+      children: [
+         {
+            index: true,
+            element: <HomePage />,
+         },
+      ],
    },
    {
       path: "*",

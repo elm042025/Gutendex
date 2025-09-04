@@ -1,7 +1,7 @@
 export default function Footer() {
    return (
       <footer>
-         <p>Gutendex &copy; 2023</p>
+         <p>Book Voyager &copy; 2023</p>
       </footer>
    );
 }

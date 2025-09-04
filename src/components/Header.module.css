@@ -1,0 +1,10 @@
+header,
+.logo,
+nav ul {
+   display: flex;
+}
+img {
+   height: 40px;
+   width: 40px;
+   margin-right: 10px;
+}
