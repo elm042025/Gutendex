@@ -14,22 +14,19 @@ import "./index.css";
 
 //! ---------------------- !
 
-const router = createBrowserRouter([
-   {
-      path: "/",
-      element: <App />,
-      children: [
-         {
-            index: true,
-            element: <HomePage />,
-         },
-      ],
-   },
-   {
-      path: "*",
-      element: <PageNotFound />,
-   },
-]);
+const router = createBrowserRouter(
+   [
+      {
+         path: "/",
+         element: <App />,
+         children: [
+            { index: true, element: <HomePage /> },
+            { path: "*", element: <PageNotFound /> }, // keeps your layout
+         ],
+      },
+   ],
+   { basename: import.meta.env.BASE_URL } // -> "/Gutendex/" from vite.config.js
+);
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
