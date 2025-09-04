@@ -1,0 +1,21 @@
+/*!------ Color palette ------
+        Background: #0B0F14 (near-black navy)
+
+        Panels: #121821 (slate blue-gray)
+
+        Text: #E9F0F7 (soft off-white)
+
+        Muted text: #9FB0C3
+
+        Accent (buttons/links): #52E3A5 (minty green)
+*/._hidden_15dhi_25{display:none}header,._headerTop_15dhi_35,._logo_15dhi_37 a,nav ul{display:flex}header{flex-direction:column;width:100%;background-color:#121821;box-shadow:0 1px 6px #e9f0f733;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);position:sticky;top:0;z-index:100;padding:.5rem 0}/*! ------------------------------ Logo and search form styles ------------------------------  *//*! ----- logo (img, h1 and p) styles -----  */._headerTop_15dhi_35{justify-content:flex-start;align-items:center;gap:6.9rem;width:100%}._logo_15dhi_37 a{align-items:center;gap:.5rem;padding:.5rem 1rem;text-decoration:none}._logo_15dhi_37 img{width:3rem}._logo_15dhi_37 h1{font-size:1.25rem;font-weight:600;color:#e9f0f7}._logo_15dhi_37 p{font-size:.95rem;font-weight:500;color:#e9f0f7}/*! ----- search form styles -----  */form{flex:1;display:flex;gap:.75rem;align-items:center;justify-content:flex-start;background-color:#9fb0c3;border-radius:.5rem;padding:.25rem .5rem;width:2.5rem;height:2.5rem;overflow:hidden;box-shadow:2px 2px 4px #000;transition:width .4s ease-in-out;transform:background-color .4s ease-in-out}form:hover,form:focus-within{width:32rem}form:focus-within{background-color:#e9f0f7;box-shadow:2px 2px 4px #00000080;border:#52e3a5 2px solid}form button img{width:100%;display:block}form button{width:1.5rem;background-color:transparent;border:none;cursor:pointer;flex-shrink:0}form input{border:none;background-color:transparent;height:90%;width:100%;color:#121821;font-size:1rem}form input:focus{outline:none}form input::placeholder{color:#121821b3}/*! -----nav links styles-----  */nav{width:100%;padding:.5rem 1rem;font-weight:500;font-size:.95rem}nav ul{display:flex;justify-content:space-between;align-items:center;list-style:none;gap:.5rem;width:100%;overflow-x:scroll;scrollbar-width:none}nav ul li{flex:1;min-width:80px}nav ul li a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;background-color:#9fb0c3;color:#121821;padding:.25rem;border-radius:.5rem;box-shadow:2px 2px 4px #0b0f14;transition:background-color .2s ease-in-out}nav ul li a:hover,nav ul li a:focus{background-color:#e9f0f7}nav ul li a img{width:2rem}@keyframes _ScrollHelper_15dhi_1{0%,to{transform:translate(0)}50%{transform:translate(-5rem)}}@media screen and (max-width: 1180px){nav ul li a{animation:_ScrollHelper_15dhi_1 1s 2}}@media screen and (max-width: 768px){._headerTop_15dhi_35{flex-direction:column;align-items:flex-start;gap:0}._logo_15dhi_37{flex-direction:column;align-items:center}._searchForm_15dhi_381{width:100vw;justify-content:center;padding:.5rem 1rem}form{width:100%;justify-content:center}form:hover,form:focus-within{width:100%}nav ul li{min-width:85px}}/*!------ Color palette ------
+Background: #0B0F14 (near-black navy)
+
+Panels: #121821 (slate blue-gray)
+
+Text: #E9F0F7 (soft off-white)
+
+Muted text: #9FB0C3
+
+Accent (buttons/links): #52E3A5 (minty green)
+*/*{margin:0;padding:0;box-sizing:border-box}:root{font-family:Inter,sans-serif;line-height:1.5;color:#e9f0f7;background-color:#0b0f14}body{min-height:100vh;width:100%}.hidden{display:none}
