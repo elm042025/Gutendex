@@ -1,29 +1,43 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/books-logo-icon.png";
-import whiteSearchIcon from "../assets/searchWhite.svg";
+// ! ------------- Assets ------------- !
+import Logo from "../assets/books-logo-icon.svg";
 import blackSearchIcon from "../assets/searchBlack.svg";
+import fiction from "../assets/fiction.svg";
+import mystery from "../assets/mystery.svg";
+import thriller from "../assets/thriller.svg";
+import romance from "../assets/romance.svg";
+import fantasy from "../assets/fantasy.svg";
+import morality from "../assets/morality.svg";
+import society from "../assets/society.svg";
+import power from "../assets/power.svg";
+import justice from "../assets/justice.svg";
+import adventure from "../assets/adventure.svg";
+import tragedy from "../assets/tragedy.svg";
+import war from "../assets/war.svg";
+import philosophy from "../assets/philosophy.svg";
+// ! ------------- Styles ------------- !
 import styles from "./Header.module.css";
 
 export default function Header() {
    return (
       <header>
          <section className={styles.headerTop}>
-            {/* Logo img, h1 and p */}
+            {/* -----Logo img, h1 and p----- */}
 
             <section className={styles.logo}>
                <Link to="/">
                   <img
                      src={Logo}
-                     alt="icon of 3 books on the left and tilted book on the right, all resting on a surface"
+                     alt="logo icon of 2 books on the left and a tilted book on the right"
                   />
+                  <section className={styles.logoText}>
+                     <h1>Book Voyager</h1>
+                     <p>Your gateway to classic literature</p>
+                  </section>
                </Link>
-               <section className={styles.logoText}>
-                  <h1>Book Voyager</h1>
-                  <p>Your gateway to classic literature</p>
-               </section>
             </section>
 
-            {/* Search form */}
+            {/* ----- Search button/form !hidden on desktop ----- */}
 
             <section className={styles.searchForm}>
                <form>
@@ -32,7 +46,7 @@ export default function Header() {
                      aria-label="Search"
                   >
                      <img
-                        src={whiteSearchIcon}
+                        src={blackSearchIcon}
                         alt="Magnifier Search Icon"
                      />
                   </button>
@@ -45,46 +59,127 @@ export default function Header() {
             </section>
          </section>
 
-         <nav>
+         {/* -----Nav links----- */}
+
+         <nav aria-label="Book Categories">
             <ul>
                <li>
-                  <Link to="/fiction">Fiction</Link>
+                  <Link to="/fiction">
+                     <img
+                        src={fiction}
+                        alt="Fiction Icon"
+                     />
+                     Fiction
+                  </Link>
                </li>
                <li>
-                  <Link to="/mystery">Mystery</Link>
+                  <Link to="/mystery">
+                     <img
+                        src={mystery}
+                        alt="Mystery Icon"
+                     />
+                     Mystery
+                  </Link>
+               </li>
+
+               <li>
+                  <Link to="/thriller">
+                     <img
+                        src={thriller}
+                        alt="Thriller Icon"
+                     />
+                     Thriller
+                  </Link>
                </li>
                <li>
-                  <Link to="/thriller">Thriller</Link>
+                  <Link to="/romance">
+                     <img
+                        src={romance}
+                        alt="Romance Icon"
+                     />
+                     Romance
+                  </Link>
                </li>
                <li>
-                  <Link to="/romance">Romance</Link>
+                  <Link to="/fantasy">
+                     <img
+                        src={fantasy}
+                        alt="Fantasy Icon"
+                     />
+                     Fantasy
+                  </Link>
                </li>
                <li>
-                  <Link to="/fantasy">Fantasy</Link>
+                  <Link to="/morality">
+                     <img
+                        src={morality}
+                        alt="Morality Icon"
+                     />
+                     Morality
+                  </Link>
                </li>
                <li>
-                  <Link to="/morality">Morality</Link>
+                  <Link to="/society">
+                     <img
+                        src={society}
+                        alt="Society Icon"
+                     />
+                     Society
+                  </Link>
                </li>
                <li>
-                  <Link to="/society">Society</Link>
+                  <Link to="/power">
+                     <img
+                        src={power}
+                        alt="Power Icon"
+                     />
+                     Power
+                  </Link>
                </li>
                <li>
-                  <Link to="/power">Power</Link>
+                  <Link to="/justice">
+                     <img
+                        src={justice}
+                        alt="Justice Icon"
+                     />
+                     Justice
+                  </Link>
                </li>
                <li>
-                  <Link to="/justice">Justice</Link>
+                  <Link to="/adventure">
+                     <img
+                        src={adventure}
+                        alt="Adventure Icon"
+                     />
+                     Adventure
+                  </Link>
                </li>
                <li>
-                  <Link to="/adventure">Adventure</Link>
+                  <Link to="/tragedy">
+                     <img
+                        src={tragedy}
+                        alt="Tragedy Icon"
+                     />
+                     Tragedy
+                  </Link>
                </li>
                <li>
-                  <Link to="/tragedy">Tragedy</Link>
+                  <Link to="/war">
+                     <img
+                        src={war}
+                        alt="War Icon"
+                     />
+                     War
+                  </Link>
                </li>
                <li>
-                  <Link to="/war">War</Link>
-               </li>
-               <li>
-                  <Link to="/philosophy">Philosophy</Link>
+                  <Link to="/philosophy">
+                     <img
+                        src={philosophy}
+                        alt="Philosophy Icon"
+                     />
+                     Philosophy
+                  </Link>
                </li>
             </ul>
          </nav>
