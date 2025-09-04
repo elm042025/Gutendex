@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/books-logo-icon.png";
-import SearchIcon from "../assets/search.svg";
+import whiteSearchIcon from "../assets/searchWhite.svg";
+import blackSearchIcon from "../assets/searchBlack.svg";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -24,18 +25,21 @@ export default function Header() {
 
             {/* Search form */}
 
-            <section className={styles.search}>
-               <form action="">
-                  <button type="submit">
-                     Search
+            <section className={styles.searchForm}>
+               <form>
+                  <button
+                     type="submit"
+                     aria-label="Search"
+                  >
                      <img
-                        src={SearchIcon}
+                        src={blackSearchIcon}
                         alt="Magnifier Search Icon"
                      />
                   </button>
                   <input
                      type="text"
                      placeholder="Search for a book..."
+                     aria-label="Search for a book"
                   />
                </form>
             </section>
