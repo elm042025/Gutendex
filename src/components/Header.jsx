@@ -1,16 +1,44 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/books-logo-icon.png";
+import SearchIcon from "../assets/search.svg";
 import styles from "./Header.module.css";
 
 export default function Header() {
    return (
       <header>
-         <section className={styles.logo}>
-            <img
-               src={Logo}
-               alt="icon of 3 books on the left and tilted book on the right, all resting on a surface"
-            />
-            <h1>Book Voyager</h1>
+         <section className={styles.headerTop}>
+            {/* Logo img, h1 and p */}
+
+            <section className={styles.logo}>
+               <Link to="/">
+                  <img
+                     src={Logo}
+                     alt="icon of 3 books on the left and tilted book on the right, all resting on a surface"
+                  />
+               </Link>
+               <section className={styles.logoText}>
+                  <h1>Book Voyager</h1>
+                  <p>Your gateway to classic literature</p>
+               </section>
+            </section>
+
+            {/* Search form */}
+
+            <section className={styles.search}>
+               <form action="">
+                  <button type="submit">
+                     Search
+                     <img
+                        src={SearchIcon}
+                        alt="Magnifier Search Icon"
+                     />
+                  </button>
+                  <input
+                     type="text"
+                     placeholder="Search for a book..."
+                  />
+               </form>
+            </section>
          </section>
 
          <nav>

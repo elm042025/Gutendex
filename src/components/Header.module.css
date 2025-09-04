@@ -1,10 +1,67 @@
 header,
+.headerTop,
 .logo,
 nav ul {
    display: flex;
 }
-img {
-   height: 40px;
-   width: 40px;
-   margin-right: 10px;
+header {
+   flex-direction: column;
+   width: 100%;
+   background-color: #99582a;
+}
+
+/*! ---------- Logo and search form styles ----------  */
+
+/*! ----- logo (img, h1 and p) styles -----  */
+.headerTop {
+   justify-content: flex-start;
+   gap: 5rem;
+   align-items: center;
+   width: 100%;
+}
+.logo {
+   align-items: center;
+   gap: 0.5rem;
+   margin: 0.5rem;
+}
+.logo img {
+   width: 3rem;
+}
+.logo h1 {
+   font-size: 1.25rem;
+   font-weight: 600;
+   color: #101010;
+}
+.logo p {
+   font-size: 0.95rem;
+   font-weight: 500;
+   color: #101010;
+}
+
+/*! ----- search form styles -----  */
+form {
+   display: flex;
+}
+
+form input {
+   width: 100%;
+   padding: 0.5rem 1rem;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+form button {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   background-color: #101010;
+   color: #e6e6e6;
+   border: none;
+   padding: 0.5rem 1rem;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+form button img {
+   width: 1rem;
 }
