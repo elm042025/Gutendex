@@ -1,3 +1,15 @@
+/*!------ Color palette ------
+Background: #0B0F14 (near-black navy)
+
+Panels: #121821 (slate blue-gray)
+
+Text: #E9F0F7 (soft off-white)
+
+Muted text: #9FB0C3
+
+Accent (buttons/links): #52E3A5 (minty green)
+*/
+
 * {
    margin: 0;
    padding: 0;
@@ -6,8 +18,8 @@
 :root {
    font-family: "Inter", sans-serif;
    line-height: 1.5;
-   color: #e6e6e6;
-   background-color: #bb9457;
+   color: #e9f0f7;
+   background-color: #0b0f14;
 }
 body {
    min-height: 100vh;

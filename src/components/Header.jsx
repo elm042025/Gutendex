@@ -32,7 +32,7 @@ export default function Header() {
                      aria-label="Search"
                   >
                      <img
-                        src={blackSearchIcon}
+                        src={whiteSearchIcon}
                         alt="Magnifier Search Icon"
                      />
                   </button>

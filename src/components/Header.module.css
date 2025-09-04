@@ -1,3 +1,15 @@
+/*!------ Color palette ------
+                    Background: #0B0F14 (near-black navy)
+
+                    Panels: #121821 (slate blue-gray)
+
+                    Text: #E9F0F7 (soft off-white)
+
+                    Muted text: #9FB0C3
+
+                    Accent (buttons/links): #52E3A5 (minty green)
+                    */
+
 header,
 .headerTop,
 .logo,
@@ -7,7 +19,7 @@ nav ul {
 header {
    flex-direction: column;
    width: 100%;
-   background-color: #99582a;
+   background-color: #121821;
 }
 
 /*! ---------- Logo and search form styles ----------  */
@@ -30,12 +42,12 @@ header {
 .logo h1 {
    font-size: 1.25rem;
    font-weight: 600;
-   color: #101010;
+   color: #e9f0f7;
 }
 .logo p {
    font-size: 0.95rem;
    font-weight: 500;
-   color: #101010;
+   color: #e9f0f7;
 }
 
 /*! ----- search form styles -----  */
@@ -44,7 +56,7 @@ form {
    display: flex;
    gap: 0.75rem;
    align-items: center;
-   background-color: #ffe6a7;
+   background-color: #121821;
    border-radius: 0.5rem;
    padding: 0.25rem 0.5rem;
    width: 2.5rem;
