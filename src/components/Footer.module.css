@@ -1,0 +1,123 @@
+:root {
+   --bg: #0b0f14;
+   --panel: #121821;
+   --text: #e9f0f7;
+   --muted: #9fb0c3;
+   --accent: #52e3a5;
+}
+
+.footer {
+   background: var(--panel);
+   color: var(--text);
+   border-top: 1px solid #1e2835;
+   box-shadow: 0 -1px 0 rgba(233, 240, 247, 0.08);
+}
+
+.inner {
+   width: min(1100px, 92vw);
+   margin-inline: auto;
+   display: grid;
+   grid-template-columns: 1.2fr 1fr 1.4fr;
+   gap: 1.25rem;
+   padding: 1.25rem 1rem;
+}
+
+.heading {
+   font-size: 0.95rem;
+   color: var(--muted);
+   letter-spacing: 0.2px;
+   margin: 0 0 0.5rem;
+}
+
+.brandLink {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   color: inherit;
+   text-decoration: none;
+}
+
+.logo {
+   width: 32px;
+   height: 32px;
+   display: block;
+}
+
+.title {
+   font-weight: 700;
+}
+
+.tagline {
+   margin: 0.35rem 0 0;
+   color: var(--muted);
+   font-size: 0.95rem;
+}
+
+.links ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: grid;
+   gap: 0.4rem;
+}
+
+.links a {
+   color: var(--text);
+   text-decoration: underline var(--accent) 2px solid;
+   display: inline-block;
+}
+
+.credits {
+   font-size: 0.95rem;
+   line-height: 1.5;
+}
+
+.creditLine {
+   margin: 0.25rem 0;
+   color: var(--muted);
+}
+
+.creditLine a {
+   color: var(--text);
+   text-decoration: underline var(--accent) 2px solid;
+   text-underline-offset: 2px;
+}
+
+.creditNote {
+   margin-top: 0.35rem;
+   font-size: 0.9rem;
+   color: var(--muted);
+   opacity: 0.9;
+}
+
+.bottomBar {
+   border-top: 1px solid #1e2835;
+   padding: 0.75rem 1rem;
+   text-align: center;
+   color: var(--muted);
+   background: #0f1621;
+}
+
+/* Focus styles for accessibility */
+:where(a, button):focus-visible {
+   outline: 2px solid var(--accent);
+   outline-offset: 2px;
+   border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+   .inner {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+@media (max-width: 620px) {
+   .inner {
+      grid-template-columns: 1fr;
+   }
+   .links ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: grid;
+   }
+}

@@ -5,7 +5,9 @@
 
         Text: #E9F0F7 (soft off-white)
 
-        Muted text: #9FB0C3
+        Muted text: #9FB0C3 (light slate blue-gray)
+
+        Border: #1e2835 (dark slate blue-gray)
 
         Accent (buttons/links): #52E3A5 (minty green)
 */
@@ -17,7 +19,7 @@
 header,
 .headerTop,
 .logo a,
-nav ul {
+.headerNav nav ul {
    display: flex;
 }
 
@@ -25,12 +27,11 @@ header {
    flex-direction: column;
    width: 100%;
    background-color: #121821;
-   box-shadow: 0 1px 6px rgba(233, 240, 247, 0.2);
+   border-bottom: 1px solid #1e2835;
    backdrop-filter: blur(6px);
    position: sticky;
    top: 0;
    z-index: 100;
-   padding: 0.5rem 0;
 }
 
 /*! ------------------------------ Logo and search form styles ------------------------------  */
@@ -41,6 +42,8 @@ header {
    align-items: center;
    gap: 6.9rem;
    width: 100%;
+   background-color: #0f1621;
+   border-bottom: 1px solid #1e2835;
 }
 
 .logo a {
@@ -66,7 +69,7 @@ header {
 
 /*! ----- search form styles -----  */
 
-form {
+.headerSearchForm form {
    flex: 1;
    display: flex;
    gap: 0.75rem;
@@ -78,25 +81,24 @@ form {
    width: 2.5rem;
    height: 2.5rem;
    overflow: hidden;
-   box-shadow: 2px 2px 4px rgb(0, 0, 0);
+   border: 1px solid #1e2835;
    transition: width 0.4s ease-in-out;
    transform: background-color 0.4s ease-in-out;
 }
-form:hover,
-form:focus-within {
+.headerSearchForm form:hover,
+.headerSearchForm form:focus-within {
    width: 32rem;
 }
-form:focus-within {
+.headerSearchForm form:focus-within {
    background-color: #e9f0f7;
-   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
    border: #52e3a5 2px solid;
 }
-form button img {
+.headerSearchForm form button img {
    width: 100%;
    display: block;
 }
 
-form button {
+.headerSearchForm form button {
    width: 1.5rem;
    background-color: transparent;
    border: none;
@@ -112,22 +114,22 @@ form input {
    color: #121821;
    font-size: 1rem;
 }
-form input:focus {
+.headerSearchForm form input:focus {
    outline: none;
 }
-form input::placeholder {
+.headerSearchForm form input::placeholder {
    color: rgba(18, 24, 33, 0.7);
 }
 
 /*! -----nav links styles-----  */
 
-nav {
+.headerNav nav {
    width: 100%;
    padding: 0.5rem 1rem;
    font-weight: 500;
    font-size: 0.95rem;
 }
-nav ul {
+.headerNav nav ul {
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -138,11 +140,11 @@ nav ul {
    /* Remove scroll bars */
    scrollbar-width: none;
 }
-nav ul li {
+.headerNav nav ul li {
    flex: 1; /* each li grows equally */
    min-width: 80px; /* prevent them from being too small */
 }
-nav ul li a {
+.headerNav nav ul li a {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -152,14 +154,14 @@ nav ul li a {
    color: #121821;
    padding: 0.25rem 0.25rem;
    border-radius: 0.5rem;
-   box-shadow: 2px 2px 4px #0b0f14;
-   transition: background-color 0.2s ease-in-out;
+   transition: background-color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 }
-nav ul li a:hover,
-nav ul li a:focus {
+.headerNav nav ul li a:hover,
+.headerNav nav ul li a:focus {
    background-color: #e9f0f7;
+   text-decoration: underline #52e3a5 2px solid;
 }
-nav ul li a img {
+.headerNav nav ul li a img {
    width: 2rem;
 }
 
@@ -174,10 +176,11 @@ nav ul li a img {
 }
 
 @media screen and (max-width: 1180px) {
-   nav ul li a {
+   .headerNav nav ul li a {
       animation: ScrollHelper 1s 2;
    }
 }
+
 @media screen and (max-width: 768px) {
    .headerTop {
       flex-direction: column;
@@ -193,15 +196,15 @@ nav ul li a img {
       justify-content: center;
       padding: 0.5rem 1rem;
    }
-   form {
+   .headerSearchForm form {
       width: 100%;
       justify-content: center;
    }
-   form:hover,
-   form:focus-within {
+   .headerSearchForm form:hover,
+   .headerSearchForm form:focus-within {
       width: 100%;
    }
-   nav ul li {
+   .headerNav nav ul li {
       min-width: 85px; /* prevent them from being too small */
    }
 }
