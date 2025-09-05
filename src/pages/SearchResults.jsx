@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+//! ----- Components ----- !
 import BookCard from "../components/BookCard";
 import PageNotFound from "../components/PageNotFound";
 import Loading from "../components/Loading";
 import NoDataFound from "../components/NoDataFound";
 import missingImage from "../assets/missing-image.svg";
+//! ----- Styles ----- !
+import styles from "./SearchResults.module.css";
 
 export default function SearchResults() {
    const [searchParams] = useSearchParams();
@@ -42,18 +45,20 @@ export default function SearchResults() {
       fetch(`https://gutendex.com/books/?search=${encodeURIComponent(searchQuery)}`)
          .then((response) => response.json())
 
+         .then((data) => {
+            setSearchResults(data.results || []);
+         })
+
          .catch((error) => {
             console.error("Error fetching search results:", error);
             setSearchState({ ...searchState, error: "Failed to fetch search results." });
          })
-         .then((data) => {
-            setSearchResults(data.results || []);
-         })
+
          .finally(() => setSearchState({ ...searchState, isLoading: false }));
    }, [searchQuery]);
 
    return (
-      <section>
+      <section className={styles.searchResults}>
          <h2>{!searchState.isLoading && `Found ${searchResults.length} results for "${searchQuery}"`}</h2>
 
          {searchState.error && <PageNotFound />}
@@ -62,19 +67,20 @@ export default function SearchResults() {
 
          {searchResults.length === 0 && !searchState.isLoading && <NoDataFound />}
 
-         {searchResults.map((book) => {
-            const { id, title, formats, authors } = book;
-            const cover = (formats && formats["image/jpeg"]) || missingImage;
-            const authorName = (authors && authors[0] && authors[0].name) || "Unknown Author";
-            return (
-               <BookCard
-                  key={id}
-                  cover={cover}
-                  title={title || "Unknown Title"}
-                  authorName={authorName}
-               />
-            );
-         })}
+         {!searchState.isLoading &&
+            searchResults.map((book) => {
+               const { id, title, formats, authors } = book;
+               const cover = (formats && formats["image/jpeg"]) || missingImage;
+               const authorName = (authors && authors[0] && authors[0].name) || "Unknown Author";
+               return (
+                  <BookCard
+                     key={id}
+                     cover={cover}
+                     title={title || "Unknown Title"}
+                     authorName={authorName}
+                  />
+               );
+            })}
       </section>
    );
 }

@@ -1,0 +1,13 @@
+.searchResults h2 {
+   text-align: center;
+   display: block;
+   width: 100%;
+}
+.searchResults {
+   padding: 2rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 3rem;
+   justify-content: center;
+   align-items: stretch;
+}
