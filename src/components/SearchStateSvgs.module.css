@@ -6,6 +6,6 @@
 @media screen and (max-width: 768px) {
    .searchStateSvg canvas {
       margin: auto;
-      padding: 10rem 0;
+      padding: 5rem 0;
    }
 }

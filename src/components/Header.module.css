@@ -161,6 +161,7 @@ form input {
 .headerNav nav ul li a:focus {
    background-color: #e9f0f7;
    text-decoration: underline #52e3a5 2px solid;
+   text-underline-offset: 2px;
 }
 .headerNav nav ul li a img {
    width: 2rem;

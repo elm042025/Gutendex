@@ -1,9 +1,12 @@
 import missingCover from "../assets/missing-image.svg";
 import styles from "./BookCard.module.css";
 
-import { useState } from "react";
+import useFavorites from "../hooks/useFavorites";
 
-export default function BookCard({ cover, title, authorName }) {
+export default function BookCard({ id, cover, title, authorName }) {
+   const { isFavorite, toggleFavorite } = useFavorites();
+   const fav = isFavorite(id);
+
    return (
       <article className={styles.bookCard}>
          <img
@@ -22,11 +25,11 @@ export default function BookCard({ cover, title, authorName }) {
 
          <button
             className={styles.favoriteButton}
-            title={isFavorite ? "Remove from favorites" : "Add to favorites"}
-            onClick={handleFavoriteClick}
+            title={fav ? "Remove from favorites" : "Add to favorites"}
+            onClick={() => toggleFavorite({ id, title, authorName, cover })}
          >
-            {isFavorite ? "★ " : "☆ "}
-            {isFavorite ? "Remove from favorites" : "Add to favorites"}
+            {fav ? "★ " : "☆ "}
+            {fav ? "Remove from favorites" : "Add to favorites"}
          </button>
       </article>
    );

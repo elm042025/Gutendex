@@ -11,3 +11,25 @@
    justify-content: center;
    align-items: stretch;
 }
+.pagination {
+   display: flex;
+   gap: 2rem;
+   justify-content: center;
+   margin: 1rem 0;
+}
+.pagination button {
+   background-color: #9fb0c3;
+   border: none;
+   border-radius: 0.5rem;
+   color: #0b0f14;
+   cursor: pointer;
+   font-weight: 500;
+   padding: 0.5rem 1rem;
+}
+.pagination button:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+}
+.pagination button:hover:enabled {
+   background-color: #e9f0f7;
+}

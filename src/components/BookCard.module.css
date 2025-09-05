@@ -73,3 +73,8 @@
    padding: 0.5rem 1rem;
    transition: background-color 0.3s ease;
 }
+.favoriteButton:hover {
+   background-color: #e9f0f7;
+   text-decoration: underline #52e3a5 2px solid;
+   text-underline-offset: 2px;
+}
