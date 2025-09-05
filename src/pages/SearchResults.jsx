@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-
 import { useSearchParams } from "react-router-dom";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import BookCard from "../components/BookCard";
 import PageNotFound from "../components/PageNotFound";
 import Loading from "../components/Loading";
 import NoDataFound from "../components/NoDataFound";
+import missingImage from "../assets/missing-image.svg";
 
 export default function SearchResults() {
    const [searchParams] = useSearchParams();
@@ -65,7 +64,7 @@ export default function SearchResults() {
 
          {searchResults.map((book) => {
             const { id, title, formats, authors } = book;
-            const cover = (formats && formats["image/jpeg"]) || "/placeholder.jpg";
+            const cover = (formats && formats["image/jpeg"]) || missingImage;
             const authorName = (authors && authors[0] && authors[0].name) || "Unknown Author";
             return (
                <BookCard
