@@ -17,6 +17,7 @@ import adventure from "../assets/adventure.svg";
 import tragedy from "../assets/tragedy.svg";
 import war from "../assets/war.svg";
 import philosophy from "../assets/philosophy.svg";
+import star from "../assets/star.svg";
 // ! ------------- Styles ------------- !
 import styles from "./Header.module.css";
 
@@ -77,10 +78,14 @@ export default function Header() {
       }
 
       window.addEventListener("scroll", onScroll, { passive: true });
+
       //!------ Cleanup listener on unmount ----- !
+
       return () => window.removeEventListener("scroll", onScroll);
    }, []);
+
    //! --------------------------Render-------------------------- !
+
    return (
       <header>
          <section className={styles.headerTop}>
@@ -99,7 +104,7 @@ export default function Header() {
                </Link>
             </section>
 
-            {/* ----- Search button/form !hidden on desktop ----- */}
+            {/* ----- Search button/form  ----- */}
 
             <section className={styles.headerSearchForm}>
                <form onSubmit={handleSearchFormSubmit}>
@@ -122,6 +127,24 @@ export default function Header() {
                   />
                </form>
             </section>
+
+            {/* ----- Favorites link ----- */}
+
+            <Link
+               to="/favorites"
+               className={styles.favoritesLink}
+            >
+               <span
+                  role="img"
+                  aria-label="Favorites"
+               >
+                  <img
+                     src={star}
+                     alt="Star icon"
+                  />
+               </span>
+               Favorites
+            </Link>
          </section>
 
          {/* -----Nav links----- */}

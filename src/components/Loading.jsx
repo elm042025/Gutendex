@@ -4,7 +4,7 @@ export default function Loading() {
    return (
       <article className={styles.searchStateSvg}>
          <DotLottieReact
-            src="https://lottie.host/62830973-a1ff-4d65-b2a7-21dcb079a5a4/k2GEhVUDga.lottie"
+            src="https://lottie.host/27b381e5-28e8-4b0a-a8a9-4c9cb271039b/JE7m5zdcv0.lottie"
             loop
             autoplay
          />

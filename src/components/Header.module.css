@@ -45,6 +45,7 @@ header {
    background-color: #0f1621;
    border-bottom: 1px solid #1e2835;
    z-index: 10;
+   position: relative;
 }
 
 .logo a {
@@ -66,6 +67,30 @@ header {
    font-size: 0.95rem;
    font-weight: 500;
    color: #e9f0f7;
+}
+
+/*! ----- favorites link styles -----  */
+.favoritesLink {
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   gap: 0.25rem;
+   background-color: #9fb0c3;
+   color: #121821;
+   padding: 0.25rem 0.75rem;
+   text-decoration: underline transparent 2px solid;
+   border-radius: 0.5rem;
+   font-weight: 500;
+   transition: background-color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+   position: absolute;
+   right: 7.25rem;
+}
+.favoritesLink img {
+   width: 1rem;
+}
+.favoritesLink:hover {
+   background-color: #e9f0f7;
+   text-decoration: underline #52e3a5 2px solid;
 }
 
 /*! ----- search form styles -----  */
@@ -200,9 +225,19 @@ form input {
       align-items: flex-start;
       gap: 0;
    }
-   .logo {
-      flex-direction: column;
-      align-items: center;
+   .logo img {
+      width: 2.5rem;
+   }
+   .logo h1 {
+      font-size: 1rem;
+   }
+   .logo p {
+      font-size: 0.75rem;
+   }
+
+   .favoritesLink {
+      right: 1rem;
+      margin-top: 1rem;
    }
    .headerSearchForm {
       width: 100vw;
