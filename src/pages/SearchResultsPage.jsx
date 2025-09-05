@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 import NoDataFound from "../components/NoDataFound";
 import missingImage from "../assets/missing-image.svg";
 //! ----- Styles ----- !
-import styles from "./SearchResults.module.css";
+import styles from "./SearchResultsPage.module.css";
 
 export default function SearchResults() {
    const [searchParams] = useSearchParams();

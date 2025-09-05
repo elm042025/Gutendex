@@ -1,12 +1,71 @@
-# React + Vite
+# 📚 Book Voyager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A React app that lets you search, explore, and favorite classic literature using the [Gutendex API](https://gutendex.com/).
 
-Currently, two official plugins are available:
+![Book Voyager Screenshot](./screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-  🔍 **Search** by title or author with live results from Gutendex
+-  📂 **Categories** menu (Fiction, Mystery, Thriller, Romance, Fantasy, etc.)
+-  ⭐ **Favorites** with persistence via `localStorage`
+-  📖 **Book details** page (cover, author, downloads, subjects, languages, links)
+-  📱 **Responsive design** with sticky header and animated category bar
+-  🎨 **Custom theme** with accessible colors and clean typography
+
+---
+
+## 🛠️ Tech Stack
+
+-  [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+-  [React Router](https://reactrouter.com/) for routing
+-  Custom React hooks for favorites (`useFavorites`)
+-  CSS Modules for component-scoped styling
+-  Gutendex API as data source
+-  Deployed via **GitHub Pages**
+
+---
+
+## 📁 Project Structure
+
+src/
+├── assets/ # SVG icons, logos, placeholders
+├── components/ # Header, Footer, BookCard, Loading, etc.
+├── hooks/ # useFavorites.js (localStorage persistence)
+├── pages/ # HomePage, SearchResultsPage, CategoryPage, FavoritesPage
+├── App.jsx # Root layout (Header + Footer + Outlet)
+├── main.jsx # Entry point, router setup
+└── index.css # Global styles
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+-  Node.js (>= 18)
+-  npm
+
+### Install
+
+```bash
+git clone https://github.com/yourusername/Gutendex.git
+cd Gutendex
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+
+npm run build
+
+npm run deploy
+```
+
+### 📄 License
+
+MIT License © 2025 [Mohammed]
