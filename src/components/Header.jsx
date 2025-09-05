@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 // ! ------------- Assets ------------- !
 import Logo from "../assets/books-logo-icon.svg";
 import blackSearchIcon from "../assets/searchBlack.svg";
@@ -19,6 +21,19 @@ import philosophy from "../assets/philosophy.svg";
 import styles from "./Header.module.css";
 
 export default function Header() {
+   const navigate = useNavigate();
+   const [searchQuery, setSearchQuery] = useState("");
+
+   //    ! ------ Handle search form submit by navigating to search results (no api call yet) ------ !
+
+   function handleSearchFormSubmit(event) {
+      event.preventDefault();
+      if (searchQuery.trim()) {
+         navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+         setSearchQuery("");
+      }
+   }
+   //! ------  required categories to map over for less repetition ------ !
    const categories = [
       { name: "Fiction", icon: fiction },
       { name: "Mystery", icon: mystery },
@@ -56,20 +71,23 @@ export default function Header() {
             {/* ----- Search button/form !hidden on desktop ----- */}
 
             <section className={styles.headerSearchForm}>
-               <form>
+               <form onSubmit={handleSearchFormSubmit}>
                   <button
                      type="submit"
                      aria-label="Search"
                   >
                      <img
                         src={blackSearchIcon}
-                        alt="Magnifier Search Icon"
+                        alt=""
+                        aria-hidden="true"
                      />
                   </button>
                   <input
                      type="text"
-                     placeholder="Search for a book..."
-                     aria-label="Search for a book"
+                     placeholder="Search for a book or an author..."
+                     aria-label="Search for a book or an author..."
+                     value={searchQuery}
+                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
                </form>
             </section>

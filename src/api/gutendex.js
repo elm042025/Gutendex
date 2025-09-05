@@ -22,7 +22,7 @@
 
 //     Når brukeren klikker på en kategori, skal applikasjonen gjøre et API-kall til /books?topic=kategori og vise bøkene som tilhører denne kategorien. Menyen kan gjerne plasseres i headeren for enkel tilgang.
 
-const BASE_URL = "https://gutendex.com/books";
+const BASE_URL = "https://gutendex.com/books/";
 
 export async function fetchBooks(url = BASE_URL) {
    const response = await fetch(url);
@@ -32,7 +32,10 @@ export async function fetchBooks(url = BASE_URL) {
    return response.json();
 }
 
-export async function fetchBooksByTopic(topic) {
-   const url = `${BASE_URL}?topic=${encodeURIComponent(topic)}`;
-   return fetchBooks(url);
+export async function fetchBooksByName(name) {
+   const response = await fetch(`${BASE_URL}?search=${name.toLowerCase()}`);
+   if (!response.ok) {
+      throw new Error("Failed to fetch books");
+   }
+   console.log(await response.json());
 }
