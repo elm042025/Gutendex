@@ -78,3 +78,16 @@
    text-decoration: underline #52e3a5 2px solid;
    text-underline-offset: 2px;
 }
+
+@media screen and (max-width: 768px) {
+   .bookCard {
+      max-width: 100%;
+   }
+   .bookInfo {
+      padding: 0.5rem;
+   }
+   .favoriteButton {
+      width: 80%;
+      font-size: 1rem;
+   }
+}
