@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ! ------------- Assets ------------- !
 import Logo from "../assets/books-logo-icon.svg";
@@ -50,6 +50,37 @@ export default function Header() {
       { name: "Philosophy", icon: philosophy },
    ];
 
+   //! ------- hidden nav bar on scroll down, shows on scroll up ------- !
+
+   const [navHidden, setNavHidden] = useState(false);
+   const lastYRef = useRef(typeof window !== "undefined" ? window.scrollY : 0);
+
+   useEffect(() => {
+      if (typeof window === "undefined") return;
+
+      function onScroll() {
+         const y = window.scrollY;
+         const last = lastYRef.current;
+         const delta = Math.abs(y - last);
+
+         if (delta < 8) return; // ignore tiny jitters
+
+         const goingDown = y > last;
+
+         if (goingDown && y > 120) {
+            setNavHidden(true); // hide when scrolling down past header
+         } else {
+            setNavHidden(false); // show on any upward scroll (or near top)
+         }
+
+         lastYRef.current = y; // always update the ref
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      //!------ Cleanup listener on unmount ----- !
+      return () => window.removeEventListener("scroll", onScroll);
+   }, []);
+   //! --------------------------Render-------------------------- !
    return (
       <header>
          <section className={styles.headerTop}>
@@ -95,7 +126,10 @@ export default function Header() {
 
          {/* -----Nav links----- */}
 
-         <section className={styles.headerNav}>
+         <section
+            className={`${styles.headerNav}
+         ${navHidden ? styles.hideNav : ""}`}
+         >
             <nav aria-label="Book Categories">
                <ul>
                   {categories.map((category) => (
