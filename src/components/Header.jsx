@@ -19,6 +19,22 @@ import philosophy from "../assets/philosophy.svg";
 import styles from "./Header.module.css";
 
 export default function Header() {
+   const categories = [
+      { name: "Fiction", icon: fiction },
+      { name: "Mystery", icon: mystery },
+      { name: "Thriller", icon: thriller },
+      { name: "Romance", icon: romance },
+      { name: "Fantasy", icon: fantasy },
+      { name: "Morality", icon: morality },
+      { name: "Society", icon: society },
+      { name: "Power", icon: power },
+      { name: "Justice", icon: justice },
+      { name: "Adventure", icon: adventure },
+      { name: "Tragedy", icon: tragedy },
+      { name: "War", icon: war },
+      { name: "Philosophy", icon: philosophy },
+   ];
+
    return (
       <header>
          <section className={styles.headerTop}>
@@ -60,127 +76,22 @@ export default function Header() {
          </section>
 
          {/* -----Nav links----- */}
+
          <section className={styles.headerNav}>
             <nav aria-label="Book Categories">
                <ul>
-                  <li>
-                     <Link to="/fiction">
-                        <img
-                           src={fiction}
-                           alt="Fiction Icon"
-                        />
-                        Fiction
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/mystery">
-                        <img
-                           src={mystery}
-                           alt="Mystery Icon"
-                        />
-                        Mystery
-                     </Link>
-                  </li>
-
-                  <li>
-                     <Link to="/thriller">
-                        <img
-                           src={thriller}
-                           alt="Thriller Icon"
-                        />
-                        Thriller
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/romance">
-                        <img
-                           src={romance}
-                           alt="Romance Icon"
-                        />
-                        Romance
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/fantasy">
-                        <img
-                           src={fantasy}
-                           alt="Fantasy Icon"
-                        />
-                        Fantasy
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/morality">
-                        <img
-                           src={morality}
-                           alt="Morality Icon"
-                        />
-                        Morality
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/society">
-                        <img
-                           src={society}
-                           alt="Society Icon"
-                        />
-                        Society
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/power">
-                        <img
-                           src={power}
-                           alt="Power Icon"
-                        />
-                        Power
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/justice">
-                        <img
-                           src={justice}
-                           alt="Justice Icon"
-                        />
-                        Justice
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/adventure">
-                        <img
-                           src={adventure}
-                           alt="Adventure Icon"
-                        />
-                        Adventure
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/tragedy">
-                        <img
-                           src={tragedy}
-                           alt="Tragedy Icon"
-                        />
-                        Tragedy
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/war">
-                        <img
-                           src={war}
-                           alt="War Icon"
-                        />
-                        War
-                     </Link>
-                  </li>
-                  <li>
-                     <Link to="/philosophy">
-                        <img
-                           src={philosophy}
-                           alt="Philosophy Icon"
-                        />
-                        Philosophy
-                     </Link>
-                  </li>
+                  {categories.map((category) => (
+                     <li key={category.name}>
+                        <Link to={`/category/${category.name}`}>
+                           <img
+                              src={category.icon}
+                              alt={""}
+                              aria-hidden="true"
+                           />
+                           {category.name}
+                        </Link>
+                     </li>
+                  ))}
                </ul>
             </nav>
          </section>

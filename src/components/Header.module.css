@@ -125,11 +125,12 @@ form input {
 
 .headerNav nav {
    width: 100%;
-   padding: 0.5rem 1rem;
+
    font-weight: 500;
    font-size: 0.95rem;
 }
 .headerNav nav ul {
+   padding: 0.5rem 1rem;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -165,7 +166,7 @@ form input {
    width: 2rem;
 }
 
-@keyframes ScrollHelper {
+@keyframes scrollHelper {
    0%,
    100% {
       transform: translateX(0);
@@ -177,7 +178,7 @@ form input {
 
 @media screen and (max-width: 1180px) {
    .headerNav nav ul li a {
-      animation: ScrollHelper 1s 2;
+      animation: scrollHelper 2s 2;
    }
 }
 
@@ -191,14 +192,12 @@ form input {
       flex-direction: column;
       align-items: center;
    }
-   .searchForm {
+   .headerSearchForm {
       width: 100vw;
-      justify-content: center;
       padding: 0.5rem 1rem;
    }
    .headerSearchForm form {
       width: 100%;
-      justify-content: center;
    }
    .headerSearchForm form:hover,
    .headerSearchForm form:focus-within {
