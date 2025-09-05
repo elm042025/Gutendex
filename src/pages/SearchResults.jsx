@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
-import BookCard from "../components/BookCard";
+
 import { useSearchParams } from "react-router-dom";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import BookCard from "../components/BookCard";
+import PageNotFound from "../components/PageNotFound";
+import Loading from "../components/Loading";
+import NoDataFound from "../components/NoDataFound";
 
 export default function SearchResults() {
    const [searchParams] = useSearchParams();
@@ -27,11 +32,13 @@ export default function SearchResults() {
          });
          return;
       }
-
+      //! ----------- Set loading searchState while fetching (slow API response) ----------- !
       setSearchState({
          ...searchState,
          isLoading: true,
       });
+
+      //! ----------- Fetch data from API (assuming all is well) ----------- !
 
       fetch(`https://gutendex.com/books/?search=${encodeURIComponent(searchQuery)}`)
          .then((response) => response.json())
@@ -47,15 +54,15 @@ export default function SearchResults() {
    }, [searchQuery]);
 
    return (
-      <div>
-         <h2>
-            Found {searchResults.length} results for "{searchQuery}"
-         </h2>
+      <section>
+         <h2>{!searchState.isLoading && `Found ${searchResults.length} results for "${searchQuery}"`}</h2>
 
-         {state.error && <p>Error: {state.error}</p>}
-         {state.isLoading && <p>Loading...</p>}
+         {searchState.error && <PageNotFound />}
 
-         {!state.isLoading && !state.error && searchResults.length === 0 && <p>No results found.</p>}
+         {searchState.isLoading && <Loading />}
+
+         {searchResults.length === 0 && !searchState.isLoading && <NoDataFound />}
+
          {searchResults.map((book) => {
             const { id, title, formats, authors } = book;
             const cover = (formats && formats["image/jpeg"]) || "/placeholder.jpg";
@@ -64,11 +71,11 @@ export default function SearchResults() {
                <BookCard
                   key={id}
                   cover={cover}
-                  title={title ? title : "Unknown Title"}
+                  title={title || "Unknown Title"}
                   authorName={authorName}
                />
             );
          })}
-      </div>
+      </section>
    );
 }
