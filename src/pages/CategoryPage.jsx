@@ -11,7 +11,9 @@ import missingImage from "../assets/missing-image.svg";
 import useBooks from "../hooks/useBooks";
 // ! ----- Styles ----- !
 import styles from "./CategoryPage.module.css";
+
 // ! ---------------------- !
+
 export default function CategoryPage() {
    const { categoryName } = useParams(); // route is /category/:categoryName
    const { results: books, count, next, previous, isLoading, error, load } = useBooks();

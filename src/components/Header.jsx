@@ -2,6 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 // ! ------------- Assets ------------- !
+
 import Logo from "../assets/books-logo-icon.svg";
 import blackSearchIcon from "../assets/searchBlack.svg";
 import fiction from "../assets/fiction.svg";
@@ -18,14 +19,18 @@ import tragedy from "../assets/tragedy.svg";
 import war from "../assets/war.svg";
 import philosophy from "../assets/philosophy.svg";
 import star from "../assets/star.svg";
+
 // ! ------------- Styles ------------- !
+
 import styles from "./Header.module.css";
+
+//! --------------------------Header-------------------------- !
 
 export default function Header() {
    const navigate = useNavigate();
    const [searchQuery, setSearchQuery] = useState("");
 
-   //    ! ------ Handle search form submit by navigating to search results (no api call yet) ------ !
+   //! ------ Handle search form submit by navigating to search results (no api call yet) ------ !
 
    function handleSearchFormSubmit(event) {
       event.preventDefault();

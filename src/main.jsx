@@ -25,7 +25,7 @@ const router = createBrowserRouter(
             { index: true, element: <HomePage /> },
             { path: "search", element: <SearchResultsPage /> },
             { path: "category/:categoryName", element: <CategoryPage /> },
-            { path: "*", element: <PageNotFound /> }, // keeps your layout
+            { path: "*", element: <PageNotFound /> },
          ],
       },
    ],

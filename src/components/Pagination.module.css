@@ -1,3 +1,11 @@
+:root {
+   --bg: #0b0f14;
+   --panel: #121821;
+   --text: #e9f0f7;
+   --muted: #9fb0c3;
+   --accent: #52e3a5;
+}
+
 .paginationContainer {
    width: 100%;
    display: block;
@@ -9,10 +17,10 @@
    margin: 1rem 0;
 }
 .pagination button {
-   background-color: #9fb0c3;
+   background-color: var(--muted);
    border: none;
    border-radius: 0.5rem;
-   color: #0b0f14;
+   color: var(--bg);
    cursor: pointer;
    font-weight: 500;
    padding: 0.5rem 1rem;
@@ -22,5 +30,5 @@
    cursor: not-allowed;
 }
 .pagination button:hover:enabled {
-   background-color: #e9f0f7;
+   background-color: var(--text);
 }

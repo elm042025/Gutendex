@@ -1,23 +1,19 @@
-/*!------ Color palette ------
-        Background: #0B0F14 (near-black navy)
+/*!------ Color palette ------*/
 
-        Panels: #121821 (slate blue-gray)
-
-        Text: #E9F0F7 (soft off-white)
-
-        Muted text: #9FB0C3 (light slate blue-gray)
-
-        Border: #1e2835 (dark slate blue-gray)
-
-        Accent (buttons/links): #52E3A5 (minty green)
-*/
+:root {
+   --bg: #0b0f14;
+   --panel: #121821;
+   --text: #e9f0f7;
+   --muted: #9fb0c3;
+   --accent: #52e3a5;
+}
 
 .hidden {
    display: none;
 }
 
 .active {
-   text-decoration: underline #52e3a5 2px solid;
+   text-decoration: underline var(--accent) 2px solid;
    text-underline-offset: 2px;
 }
 
@@ -31,7 +27,7 @@ header,
 header {
    flex-direction: column;
    width: 100%;
-   background-color: #121821;
+   background-color: var(--panel);
    border-bottom: 1px solid #1e2835;
    backdrop-filter: blur(6px);
    position: sticky;
@@ -47,7 +43,7 @@ header {
    align-items: center;
    gap: 6.9rem;
    width: 100%;
-   background-color: #0f1621;
+   background-color: var(--bg);
    border-bottom: 1px solid #1e2835;
    z-index: 10;
    position: relative;
@@ -66,12 +62,12 @@ header {
 .logo h1 {
    font-size: 1.25rem;
    font-weight: 600;
-   color: #e9f0f7;
+   color: var(--text);
 }
 .logo p {
    font-size: 0.95rem;
    font-weight: 500;
-   color: #e9f0f7;
+   color: var(--text);
 }
 
 /*! ----- favorites link styles -----  */
@@ -80,8 +76,8 @@ header {
    align-items: center;
    text-decoration: none;
    gap: 0.25rem;
-   background-color: #9fb0c3;
-   color: #121821;
+   background-color: var(--muted);
+   color: var(--panel);
    padding: 0.25rem 0.75rem;
    text-decoration: underline transparent 2px solid;
    border-radius: 0.5rem;
@@ -94,8 +90,8 @@ header {
    width: 1rem;
 }
 .favoritesLink:hover {
-   background-color: #e9f0f7;
-   text-decoration: underline #52e3a5 2px solid;
+   background-color: var(--text);
+   text-decoration: underline var(--accent) 2px solid;
 }
 
 /*! ----- search form styles -----  */
@@ -106,7 +102,7 @@ header {
    gap: 0.75rem;
    align-items: center;
    justify-content: flex-start;
-   background-color: #9fb0c3;
+   background-color: var(--muted);
    border-radius: 0.5rem;
    padding: 0.25rem 0.5rem;
    width: 2.5rem;
@@ -121,8 +117,8 @@ header {
    width: 32rem;
 }
 .headerSearchForm form:focus-within {
-   background-color: #e9f0f7;
-   border: #52e3a5 2px solid;
+   background-color: var(--text);
+   border: var(--accent) 2px solid;
 }
 .headerSearchForm form button img {
    width: 100%;
@@ -137,19 +133,19 @@ header {
    flex-shrink: 0;
 }
 
-form input {
+.headerSearchForm form input {
    border: none;
    background-color: transparent;
    height: 90%;
    width: 100%;
-   color: #121821;
+   color: var(--panel);
    font-size: 1rem;
 }
 .headerSearchForm form input:focus {
    outline: none;
 }
 .headerSearchForm form input::placeholder {
-   color: rgba(18, 24, 33, 0.7);
+   color: rgba(18, 24, 33, 0.7); /* No direct var for this, keep as is */
 }
 
 /*! -----nav links styles-----  */
@@ -159,6 +155,7 @@ form input {
    overflow: hidden;
    scale: 1;
    will-change: max-height, scale;
+   overflow-anchor: none;
 }
 .hideNav {
    max-height: 0;
@@ -192,16 +189,16 @@ form input {
    align-items: center;
    justify-content: center;
    text-decoration: none;
-   background-color: #9fb0c3;
-   color: #121821;
+   background-color: var(--muted);
+   color: var(--panel);
    padding: 0.25rem 0.25rem;
    border-radius: 0.5rem;
    transition: background-color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 }
 .headerNav nav ul li a:hover,
 .headerNav nav ul li a:focus {
-   background-color: #e9f0f7;
-   text-decoration: underline #52e3a5 2px solid;
+   background-color: var(--text);
+   text-decoration: underline var(--accent) 2px solid;
    text-underline-offset: 2px;
 }
 .headerNav nav ul li a img {

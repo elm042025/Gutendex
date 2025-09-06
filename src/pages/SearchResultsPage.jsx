@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+// ! ----- Components ----- !
 import BookCard from "../components/BookCard";
 import PageNotFound from "../components/PageNotFound";
 import Loading from "../components/Loading";
 import NoDataFound from "../components/NoDataFound";
 import Pagination from "../components/Pagination";
+// ! ----- Assets ----- !
 import missingImage from "../assets/missing-image.svg";
-
-import useBooks from "../hooks/useBooks";
+// ! ----- Hooks ----- !
+import useBooks from "../hooks/useBooks.js";
+// ! ----- Styles ----- !
 import styles from "./SearchResultsPage.module.css";
+
+// ! ---------------------- !
 
 export default function SearchResults() {
    const [searchParams] = useSearchParams();
@@ -18,7 +23,6 @@ export default function SearchResults() {
 
    useEffect(() => {
       if (!q) {
-         // clear by loading an empty (do nothing) or just skip
          return;
       }
       const url = `https://gutendex.com/books/?search=${encodeURIComponent(q)}`;
