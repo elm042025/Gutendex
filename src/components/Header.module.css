@@ -78,7 +78,7 @@ header {
    gap: 0.25rem;
    background-color: var(--muted);
    color: var(--panel);
-   padding: 0.25rem 0.75rem;
+   padding: 0.5rem 0.75rem;
    text-decoration: underline transparent 2px solid;
    border-radius: 0.5rem;
    font-weight: 500;

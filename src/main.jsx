@@ -2,6 +2,9 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+//!  ----- context ------ !
+import { FavoritesProvider } from "./context/FavoritesContext.jsx";
+
 // ! ----- Components and pages ----- !
 
 import HomePage from "./pages/HomePage.jsx";
@@ -34,6 +37,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
-      <RouterProvider router={router} />
+      <FavoritesProvider>
+         <RouterProvider router={router} />
+      </FavoritesProvider>
    </StrictMode>
 );

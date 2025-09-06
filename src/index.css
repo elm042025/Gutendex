@@ -1,14 +1,10 @@
-/*!------ Color palette ------
-Background: #0B0F14 (near-black navy)
-
-Panels: #121821 (slate blue-gray)
-
-Text: #E9F0F7 (soft off-white)
-
-Muted text: #9FB0C3
-
-Accent (buttons/links): #52E3A5 (minty green)
-*/
+:root {
+   --bg: #0b0f14;
+   --panel: #121821;
+   --text: #e9f0f7;
+   --muted: #9fb0c3;
+   --accent: #52e3a5;
+}
 
 * {
    margin: 0;
@@ -16,10 +12,10 @@ Accent (buttons/links): #52E3A5 (minty green)
    box-sizing: border-box;
 }
 :root {
-   font-family: "Inter", sans-serif;
+   font-family: "poppins", sans-serif;
    line-height: 1.5;
-   color: #e9f0f7;
-   background-color: #0b0f14;
+   color: var(--text);
+   background-color: var(--bg);
 }
 body {
    min-height: 100vh;
