@@ -1,9 +1,9 @@
-.searchResults h2 {
+.categoryResults h2 {
    text-align: center;
    display: block;
    width: 100%;
 }
-.searchResults {
+.categoryResults {
    padding: 2rem;
    display: flex;
    flex-wrap: wrap;

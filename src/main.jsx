@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/HomePage.jsx";
 import SearchResultsPage from "./pages/SearchResultsPage.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 import App from "./App.jsx";
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
          children: [
             { index: true, element: <HomePage /> },
             { path: "search", element: <SearchResultsPage /> },
+            { path: "category/:categoryName", element: <CategoryPage /> },
             { path: "*", element: <PageNotFound /> }, // keeps your layout
          ],
       },

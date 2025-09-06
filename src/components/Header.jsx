@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 // ! ------------- Assets ------------- !
@@ -64,11 +64,11 @@ export default function Header() {
          const last = lastYRef.current;
          const delta = Math.abs(y - last);
 
-         if (delta < 8) return; // ignore tiny jitters
+         if (delta < 10) return; // ignore tiny jitters
 
          const goingDown = y > last;
 
-         if (goingDown && y > 120) {
+         if (goingDown && y > 100) {
             setNavHidden(true); // hide when scrolling down past header
          } else {
             setNavHidden(false); // show on any upward scroll (or near top)
@@ -157,14 +157,14 @@ export default function Header() {
                <ul>
                   {categories.map((category) => (
                      <li key={category.name}>
-                        <Link to={`/category/${category.name}`}>
+                        <NavLink to={`/category/${category.name}`}>
                            <img
                               src={category.icon}
                               alt={""}
                               aria-hidden="true"
                            />
                            {category.name}
-                        </Link>
+                        </NavLink>
                      </li>
                   ))}
                </ul>

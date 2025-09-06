@@ -1,83 +1,40 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-//! ----- Components ----- !
 import BookCard from "../components/BookCard";
 import PageNotFound from "../components/PageNotFound";
 import Loading from "../components/Loading";
 import NoDataFound from "../components/NoDataFound";
+import Pagination from "../components/Pagination";
 import missingImage from "../assets/missing-image.svg";
-//! ----- Styles ----- !
+
+import useBooks from "../hooks/useBooks";
 import styles from "./SearchResultsPage.module.css";
 
 export default function SearchResults() {
    const [searchParams] = useSearchParams();
+   const q = (searchParams.get("query") || "").trim();
 
-   const searchQuery = (searchParams.get("query") || "").trim();
+   const { results, count, next, previous, isLoading, error, load } = useBooks();
 
-   const [searchResults, setSearchResults] = useState([]);
-
-   const [searchState, setSearchState] = useState({
-      isLoading: false,
-      error: "",
-   });
-
-   const [nextUrl, setNextUrl] = useState(null);
-
-   const [prevUrl, setPrevUrl] = useState(null);
-
-   //! ------ Handle pagination URLs ------ !
-
-   function load(url) {
-      setSearchState((s) => ({ ...s, isLoading: true, error: "" }));
-
-      fetch(url)
-         .then((res) => {
-            if (!res.ok) throw new Error("Network response was not ok");
-            return res.json();
-         })
-         .then((data) => {
-            setSearchResults(data.results || []);
-            setNextUrl(data.next || null);
-            setPrevUrl(data.previous || null);
-         })
-         .catch((err) => {
-            console.error("Error fetching search results:", err);
-            setSearchState((s) => ({ ...s, error: "Failed to fetch search results." }));
-            setSearchResults([]);
-            setNextUrl(null);
-            setPrevUrl(null);
-         })
-         .finally(() => {
-            setSearchState((s) => ({ ...s, isLoading: false }));
-         });
-   }
    useEffect(() => {
-      if (!searchQuery) {
-         setSearchResults([]);
-         setNextUrl(null);
-         setPrevUrl(null);
-         setSearchState((s) => ({ ...s, isLoading: false, error: "" }));
+      if (!q) {
+         // clear by loading an empty (do nothing) or just skip
          return;
       }
-
-      const firstPageUrl = `https://gutendex.com/books/?search=${encodeURIComponent(searchQuery)}`;
-      load(firstPageUrl);
-   }, [searchQuery]);
+      const url = `https://gutendex.com/books/?search=${encodeURIComponent(q)}`;
+      load(url);
+   }, [q, load]);
 
    return (
       <section className={styles.searchResults}>
-         <h2>
-            {!searchState.isLoading && (searchQuery ? `Found ${searchResults.length} results for "${searchQuery}"` : "Type something in the search box above.")}
-         </h2>
+         <h2>{!isLoading && (q ? `Found ${count} results for "${q}"` : "Type something in the search box above.")}</h2>
 
-         {searchState.error && <PageNotFound />}
+         {error && <PageNotFound />}
+         {isLoading && <Loading />}
+         {!isLoading && q && results.length === 0 && <NoDataFound />}
 
-         {searchState.isLoading && <Loading />}
-
-         {searchResults.length === 0 && !searchState.isLoading && searchQuery && <NoDataFound />}
-
-         {!searchState.isLoading &&
-            searchResults.map((book) => {
+         {!isLoading &&
+            results.map((book) => {
                const { id, title, formats, authors } = book;
                const cover = (formats && formats["image/jpeg"]) || missingImage;
                const authorName = (authors && authors[0] && authors[0].name) || "Unknown Author";
@@ -91,22 +48,13 @@ export default function SearchResults() {
                   />
                );
             })}
-         {!searchState.isLoading && (nextUrl || prevUrl) && (
-            <section className={styles.pagination}>
-               <button
-                  disabled={!prevUrl}
-                  onClick={() => load(prevUrl)}
-               >
-                  ← Previous
-               </button>
-               <button
-                  disabled={!nextUrl}
-                  onClick={() => load(nextUrl)}
-               >
-                  Next →
-               </button>
-            </section>
-         )}
+
+         <Pagination
+            prevUrl={previous}
+            nextUrl={next}
+            loading={isLoading}
+            onPageChange={(url) => load(url)}
+         />
       </section>
    );
 }
