@@ -1,16 +1,10 @@
-:root {
-   --bg: #0b0f14;
-   --panel: #121821;
-   --text: #e9f0f7;
-   --muted: #9fb0c3;
-   --accent: #52e3a5;
-}
+/*!------ Styles use CSS variables defined in index.css ------*/
 
 .footer {
    margin-top: auto;
    background: var(--panel);
    color: var(--text);
-   border-top: 1px solid #1e2835;
+   border-top: 1px solid var(--border);
    box-shadow: 0 -1px 0 rgba(233, 240, 247, 0.08);
 }
 
@@ -92,11 +86,11 @@
 }
 
 .bottomBar {
-   border-top: 1px solid #1e2835;
+   border-top: 1px solid var(--border);
    padding: 0.75rem 1rem;
    text-align: center;
    color: var(--muted);
-   background: #0f1621;
+   background: var(--darker);
 }
 
 /* Focus styles for accessibility */

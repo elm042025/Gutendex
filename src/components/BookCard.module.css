@@ -1,13 +1,4 @@
-/*!------ Color palette ------*/
-
-:root {
-   --bg: #0b0f14;
-   --panel: #121821;
-   --text: #e9f0f7;
-   --muted: #9fb0c3;
-   --border: #1e2835;
-   --accent: #52e3a5;
-}
+/*!------ Styles use CSS variables defined in index.css ------*/
 
 .bookCard {
    display: flex;

@@ -1,20 +1,13 @@
-/*!------ Color palette ------*/
-
-:root {
-   --bg: #0b0f14;
-   --panel: #121821;
-   --text: #e9f0f7;
-   --muted: #9fb0c3;
-   --accent: #52e3a5;
-}
-
-/*
-   --bg: #0b0f14;
-   --panel: #121821;
-   --text: #e9f0f7;
-   --muted: #9fb0c3;
-   --accent: #52e3a5;
-*/
+/*!------ Styles uheader {
+   flex-direction: column;
+   width: 100%;
+   background-color: var(--panel);
+   border-bottom: 1px solid var(--border);
+   backdrop-filter: blur(6px);
+   position: sticky;
+   top: 0;
+   z-index: 100;
+}iables defined in index.css ------*/
 
 .hidden {
    display: none;
@@ -36,7 +29,7 @@ header {
    flex-direction: column;
    width: 100%;
    background-color: var(--bg);
-   border-bottom: 1px solid #1e2835;
+   border-bottom: 1px solid var(--border);
    backdrop-filter: blur(6px);
    position: sticky;
    top: 0;
@@ -52,7 +45,7 @@ header {
    gap: 6.9rem;
    width: 100%;
    background-color: var(--bg);
-   border-bottom: 1px solid #1e2835;
+   border-bottom: 1px solid var(--border);
    z-index: 10;
    position: relative;
 }
@@ -117,7 +110,7 @@ header {
    width: 2.5rem;
    height: 2.5rem;
    overflow: hidden;
-   border: 1px solid #1e2835;
+   border: 1px solid var(--border);
    transition: width 0.4s ease-in-out;
    transform: background-color 0.4s ease-in-out;
 }

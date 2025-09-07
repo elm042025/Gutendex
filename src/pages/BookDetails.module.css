@@ -1,3 +1,5 @@
+/* All CSS variables are defined in index.css */
+
 .bookDetailsPage {
    padding: 2rem 4rem;
    display: flex;
@@ -7,20 +9,20 @@
    display: inline-block;
    margin: 1rem 0;
    text-decoration: none;
-   color: #9fb0c3;
+   color: var(--muted);
    font-weight: 500;
    font-size: 1.5rem;
 }
 .backLink:hover {
-   color: #e9f0f7;
+   color: var(--text);
 }
 
 .bookDetailsCard {
    align-self: center;
    display: flex;
    gap: 2rem;
-   background: #121821;
-   border: 1px solid #1e2835;
+   background: var(--panel);
+   border: 1px solid var(--border);
    border-radius: 12px;
    padding: 1rem;
    width: 100%;
@@ -62,7 +64,7 @@
    background-color: var(--accent);
 }
 .readButton {
-   background: #52e3a5;
+   background: var(--accent);
    text-decoration: none;
 }
 .favoriteButton:hover,
@@ -82,11 +84,11 @@
    font-size: 2rem;
    font-weight: 500;
    line-height: 1.2;
-   color: #e9f0f7;
+   color: var(--text);
 }
 .author {
    margin: 0 0 0.75rem;
-   color: #9fb0c3;
+   color: var(--muted);
 }
 
 .meta {
@@ -96,7 +98,7 @@
    margin-bottom: 1rem;
 }
 .meta dt {
-   color: #9fb0c3;
+   color: var(--muted);
 }
 .meta dd {
    margin: 0;
@@ -114,8 +116,8 @@
    list-style: none;
 }
 .tags li {
-   background: #0f1621;
-   border: 1px solid #1e2835;
+   background: var(--darker);
+   border: 1px solid var(--border);
    padding: 0.25rem 0.5rem;
    border-radius: 0.5rem;
 }

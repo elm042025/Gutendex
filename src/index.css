@@ -4,18 +4,19 @@
    --text: #e9f0f7;
    --muted: #9fb0c3;
    --accent: #52e3a5;
+   --border: #1e2835;
+   --darker: #0f1621; /* Darker variant for backgrounds */
+
+   font-family: "poppins", sans-serif;
+   line-height: 1.5;
+   color: var(--text);
+   background-color: var(--bg);
 }
 
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-}
-:root {
-   font-family: "poppins", sans-serif;
-   line-height: 1.5;
-   color: var(--text);
-   background-color: var(--bg);
 }
 body {
    min-height: 100vh;

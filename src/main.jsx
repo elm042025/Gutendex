@@ -12,7 +12,7 @@ import SearchResultsPage from "./pages/SearchResultsPage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 import FavoritesPage from "./pages/FavoritesPage.jsx";
-import BookDetails from "./pages/BookDetailes.jsx";
+import BookDetails from "./pages/BookDetails.jsx";
 import App from "./App.jsx";
 
 // ! ----- Styles ----- !
