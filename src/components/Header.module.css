@@ -249,6 +249,8 @@ header {
    .favoritesLink {
       right: 1rem;
       margin-top: 1rem;
+      padding: 0.5rem 0.5rem;
+      font-size: 1rem;
    }
    .headerSearchForm {
       width: 100vw;

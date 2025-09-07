@@ -75,17 +75,7 @@
    font-size: 1.1rem;
 }
 .favorited {
-   margin-top: auto;
    background-color: var(--accent);
-   border: none;
-   border-radius: 0.5rem;
-   color: var(--bg);
-   cursor: pointer;
-   font-weight: 500;
-   padding: 0.5rem 1rem;
-   transition: background-color 0.3s ease;
-   width: 100%;
-   font-size: 1.1rem;
 }
 .favoriteButton span {
    font-size: 1.25rem;
@@ -100,11 +90,19 @@
    .bookCard {
       max-width: 100%;
    }
+   .bookCard img {
+      aspect-ratio: 3 / 4;
+   }
    .bookInfo {
       padding: 0.5rem;
+   }
+
+   .bookTitle {
+      font-size: 1.25rem;
    }
    .favoriteButton {
       width: 80%;
       font-size: 1rem;
+      margin-top: auto;
    }
 }

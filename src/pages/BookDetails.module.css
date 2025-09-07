@@ -1,0 +1,157 @@
+.bookDetailsPage {
+   padding: 2rem 4rem;
+   display: flex;
+   flex-direction: column;
+}
+.backLink {
+   display: inline-block;
+   margin: 1rem 0;
+   text-decoration: none;
+   color: #9fb0c3;
+   font-weight: 500;
+   font-size: 1.5rem;
+}
+.backLink:hover {
+   color: #e9f0f7;
+}
+
+.bookDetailsCard {
+   align-self: center;
+   display: flex;
+   gap: 2rem;
+   background: #121821;
+   border: 1px solid #1e2835;
+   border-radius: 12px;
+   padding: 1rem;
+   width: 100%;
+}
+
+.coverAndButtons {
+   max-width: 12rem;
+   flex: 0 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 0.5rem;
+   align-items: stretch;
+}
+.cover {
+   width: 100%;
+   aspect-ratio: 2/3;
+   object-fit: cover;
+   border-radius: 0.5rem;
+}
+
+.favoriteButton,
+.readButton {
+   margin-top: auto;
+   background-color: var(--muted);
+   border: none;
+   border-radius: 0.5rem;
+   color: var(--bg);
+   cursor: pointer;
+   font-weight: 500;
+   padding: 0.5rem 0.5rem;
+   transition: background-color 0.3s ease;
+   width: 100%;
+   font-size: 1rem;
+   font-family: "Poppins", sans-serif;
+   text-align: center;
+}
+.favorited {
+   background-color: var(--accent);
+}
+.readButton {
+   background: #52e3a5;
+   text-decoration: none;
+}
+.favoriteButton:hover,
+.readButton:hover {
+   background-color: var(--text);
+   text-decoration: underline var(--accent) 2px solid;
+   text-underline-offset: 2px;
+}
+.allInfo {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.title {
+   margin: 0 0 0.5rem;
+   font-size: 2rem;
+   font-weight: 500;
+   line-height: 1.2;
+   color: #e9f0f7;
+}
+.author {
+   margin: 0 0 0.75rem;
+   color: #9fb0c3;
+}
+
+.meta {
+   display: grid;
+   grid-template-columns: max-content 1fr;
+   gap: 0.25rem 1rem;
+   margin-bottom: 1rem;
+}
+.meta dt {
+   color: #9fb0c3;
+}
+.meta dd {
+   margin: 0;
+}
+
+.tags h4 {
+   margin: 0 0 0.5rem;
+}
+.tags ul {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+.tags li {
+   background: #0f1621;
+   border: 1px solid #1e2835;
+   padding: 0.25rem 0.5rem;
+   border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+   .bookDetailsPage {
+      padding: 1rem 1.5rem;
+   }
+   .bookDetailsCard {
+      flex-direction: column;
+      align-items: center;
+   }
+   .coverAndButtons {
+      max-width: 100%;
+      justify-content: center;
+   }
+   .cover {
+      height: auto;
+      aspect-ratio: auto;
+   }
+   .allInfo {
+      align-items: center;
+      text-align: center;
+   }
+   .title {
+      font-size: 1.5rem;
+   }
+   .meta {
+      grid-template-columns: 1fr 1fr;
+      text-align: center;
+      gap: 1rem 1rem;
+   }
+   .tags h4,
+   .summary h5 {
+      margin: 1rem auto;
+      font-size: 2rem;
+      font-weight: 500;
+   }
+}
