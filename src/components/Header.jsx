@@ -139,16 +139,7 @@ export default function Header() {
                to="/favorites"
                className={styles.favoritesLink}
             >
-               <span
-                  role="img"
-                  aria-label="Favorites"
-               >
-                  <img
-                     src={star}
-                     alt="Star icon"
-                  />
-               </span>
-               Favorites
+               ★ Favorites
             </Link>
          </section>
 

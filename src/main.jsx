@@ -11,6 +11,7 @@ import HomePage from "./pages/HomePage.jsx";
 import SearchResultsPage from "./pages/SearchResultsPage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
+import FavoritesPage from "./pages/FavoritesPage.jsx";
 import App from "./App.jsx";
 
 // ! ----- Styles ----- !
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
             { index: true, element: <HomePage /> },
             { path: "search", element: <SearchResultsPage /> },
             { path: "category/:categoryName", element: <CategoryPage /> },
+            { path: "favorites", element: <FavoritesPage /> },
             { path: "*", element: <PageNotFound /> },
          ],
       },

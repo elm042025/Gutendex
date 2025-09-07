@@ -8,6 +8,14 @@
    --accent: #52e3a5;
 }
 
+/*
+   --bg: #0b0f14;
+   --panel: #121821;
+   --text: #e9f0f7;
+   --muted: #9fb0c3;
+   --accent: #52e3a5;
+*/
+
 .hidden {
    display: none;
 }
@@ -27,7 +35,7 @@ header,
 header {
    flex-direction: column;
    width: 100%;
-   background-color: var(--panel);
+   background-color: var(--bg);
    border-bottom: 1px solid #1e2835;
    backdrop-filter: blur(6px);
    position: sticky;
@@ -67,28 +75,29 @@ header {
 .logo p {
    font-size: 0.95rem;
    font-weight: 500;
-   color: var(--text);
+   color: var(--muted);
 }
 
 /*! ----- favorites link styles -----  */
 .favoritesLink {
-   display: flex;
-   align-items: center;
    text-decoration: none;
-   gap: 0.25rem;
+   margin-top: auto;
    background-color: var(--muted);
-   color: var(--panel);
-   padding: 0.5rem 0.75rem;
-   text-decoration: underline transparent 2px solid;
+   border: none;
    border-radius: 0.5rem;
+   color: var(--bg);
+   cursor: pointer;
    font-weight: 500;
-   transition: background-color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+   padding: 0.25rem 1rem;
+   transition: background-color 0.3s ease;
+   font-size: 1.1rem;
    position: absolute;
    right: 7.25rem;
 }
-.favoritesLink img {
-   width: 1rem;
+.favoritesLink span {
+   font-size: 1.25rem;
 }
+
 .favoritesLink:hover {
    background-color: var(--text);
    text-decoration: underline var(--accent) 2px solid;

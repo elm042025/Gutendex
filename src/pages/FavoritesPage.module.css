@@ -1,0 +1,22 @@
+.favoritesPage {
+   padding: 2rem;
+}
+.favoritesPage h2,
+.favoritesPage p {
+   text-align: center;
+   display: block;
+   width: 100%;
+}
+.favoritesPage p {
+   margin: 1rem auto;
+   color: var(--muted);
+   font-size: 1.1rem;
+}
+.favoritesResult {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 3rem;
+   justify-content: center;
+   align-items: stretch;
+   margin-top: 3rem;
+}

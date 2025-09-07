@@ -42,6 +42,8 @@
 }
 
 .bookTitle {
+   font-size: 1rem;
+   font-weight: 500;
    display: -webkit-box;
    -webkit-line-clamp: 2; /* show max 2 lines */
    line-clamp: 2; /* standard property for compatibility */
@@ -71,6 +73,22 @@
    transition: background-color 0.3s ease;
    width: 100%;
    font-size: 1.1rem;
+}
+.favorited {
+   margin-top: auto;
+   background-color: var(--accent);
+   border: none;
+   border-radius: 0.5rem;
+   color: var(--bg);
+   cursor: pointer;
+   font-weight: 500;
+   padding: 0.5rem 1rem;
+   transition: background-color 0.3s ease;
+   width: 100%;
+   font-size: 1.1rem;
+}
+.favoriteButton span {
+   font-size: 1.25rem;
 }
 .favoriteButton:hover {
    background-color: var(--text);

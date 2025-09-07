@@ -28,13 +28,13 @@ export default function BookCard({ id, cover, title, authorName }) {
          </section>
 
          <button
-            className={styles.favoriteButton}
+            className={styles.favoriteButton + (fav ? " " + styles.favorited : "")}
             title={fav ? "Remove from favorites" : "Add to favorites"}
             aria-label={fav ? "Remove from favorites" : "Add to favorites"}
             onClick={() => toggleFavorite({ id, title, authorName, cover })}
          >
-            {fav ? "★ " : "☆ "}
-            {fav ? "Remove from favorites" : "Add to favorites"}
+            <span>{fav ? "★ " : "☆ "}</span>
+            {fav ? "Remove favorite" : "Add favorite"}
          </button>
       </article>
    );
