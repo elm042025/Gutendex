@@ -148,12 +148,15 @@
    .meta {
       grid-template-columns: 1fr 1fr;
       text-align: center;
-      gap: 1rem 1rem;
+      gap: 1rem 2rem;
    }
    .tags h4,
    .summary h5 {
       margin: 1rem auto;
       font-size: 2rem;
       font-weight: 500;
+   }
+   .summary p {
+      text-align: justify;
    }
 }

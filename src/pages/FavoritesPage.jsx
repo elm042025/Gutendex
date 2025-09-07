@@ -11,16 +11,19 @@ export default function FavoritesPage() {
 
    return (
       <section className={styles.favoritesPage}>
-         <h2>Your Favorites {count > 0 ? `(${count})` : ""}</h2>
-
-         {count > 0 ? <p className={styles.hint}>Click “Remove” on any card to unfavorite it.</p> : null}
+         {count > 0 ? (
+            <>
+               <h2>Your Favorites {count > 0 ? `(${count})` : ""}</h2>
+               <p className={styles.hint}>Click “Remove” on any card to unfavorite it.</p>
+            </>
+         ) : null}
 
          {count === 0 ? (
             <article className={styles.empty}>
-               <NoDataFound />
                <p>
-                  You haven’t added any books yet. Try the <Link to="/search?query=">search</Link> or pick a <Link to="/category/Fiction">category</Link>.
+                  You haven’t added any books yet. Try the <Link to="/search?query=">search</Link> or pick a <Link to="/category/Fiction">category</Link>
                </p>
+               <NoDataFound />
             </article>
          ) : (
             <section className={styles.favoritesResult}>

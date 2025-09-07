@@ -75,6 +75,18 @@ export default function Footer() {
                      Flaticon
                   </a>
                   .
+                  <p>
+                     {" "}
+                     Animations from{" "}
+                     <a
+                        href="https://lottiefiles.com/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                     >
+                        LottieFiles
+                     </a>
+                     .
+                  </p>
                </p>
                <p className={styles.creditLine}>
                   Data via the open{" "}

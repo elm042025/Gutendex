@@ -12,6 +12,24 @@
    color: var(--muted);
    font-size: 1.1rem;
 }
+.empty p {
+   font-size: 2rem;
+}
+.empty a {
+   display: inline-block;
+   padding: 0 0.5rem;
+   background-color: var(--muted);
+   color: var(--panel);
+   font-size: 2rem;
+   font-weight: 500;
+   text-decoration: none;
+   border-radius: 0.5rem;
+   transition: background-color 0.3s ease;
+}
+.empty a:hover {
+   background-color: var(--text);
+   text-decoration: underline var(--accent) 2px solid;
+}
 .favoritesResult {
    display: flex;
    flex-wrap: wrap;
@@ -28,6 +46,9 @@
    .favoritesPage p {
       font-size: 1rem;
       margin: 0.5rem auto;
+   }
+   .empty a {
+      font-size: 1rem;
    }
    .favoritesResult {
       gap: 1.5rem;

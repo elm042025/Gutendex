@@ -43,7 +43,6 @@ export default function BookDetail() {
             <NoDataFound />
             <Link
                to=".."
-               relative="path"
                className={styles.backLink}
             >
                ← Back
@@ -75,8 +74,7 @@ export default function BookDetail() {
    return (
       <article className={styles.bookDetailsPage}>
          <Link
-            to=".."
-            relative="path"
+            to="/"
             className={styles.backLink}
          >
             ← Back
