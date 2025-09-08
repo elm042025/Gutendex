@@ -1,0 +1,13 @@
+.explorePage h2 {
+   text-align: center;
+   display: block;
+   width: 100%;
+}
+.explorePage {
+   padding: 2rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 3rem;
+   justify-content: center;
+   align-items: stretch;
+}
