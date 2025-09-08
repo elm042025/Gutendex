@@ -51,7 +51,7 @@ src/
 ### Install
 
 ```bash
-git clone https://github.com/yourusername/Gutendex.git
+git clone https://github.com/elm042025/Gutendex.git
 cd Gutendex
 npm install
 ```
