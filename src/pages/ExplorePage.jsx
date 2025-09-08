@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import BookCard from "../components/BookCard";
 import Pagination from "../components/Pagination";
-import PopularRow from "../components/PopularRow";
 import NoDataFound from "../components/NoDataFound";
 import PageNotFound from "../components/PageNotFound";
 import Loading from "../components/Loading";
@@ -21,7 +19,7 @@ export default function ExplorePage() {
 
    return (
       <section className={styles.explorePage}>
-         <h2>Explore the most popular books</h2>
+         <h2>Explore the {!isLoading && count} most popular books</h2>
 
          {isLoading && <Loading />}
          {error && <PageNotFound />}

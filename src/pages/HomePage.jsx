@@ -1,8 +1,7 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-// ! ------------- components ------------- !
-import PopularRow from "../components/PopularRow";
-import FavoritesRow from "../components/FavoritesRow";
+
 // ! ------------- Styles ------------- !
+
 import styles from "./HomePage.module.css";
 import { Link } from "react-router-dom";
 
@@ -36,9 +35,6 @@ export default function HomePage() {
                />
             </section>
          </article>
-
-         {/* Rows */}
-         {/* <FavoritesRow /> */}
       </section>
    );
 }
