@@ -1,6 +1,9 @@
 .favoritesPage {
    padding: 2rem;
 }
+.favoritesPage h2 {
+   font-weight: 500;
+}
 .favoritesPage h2,
 .favoritesPage p {
    text-align: center;
