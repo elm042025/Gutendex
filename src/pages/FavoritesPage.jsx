@@ -21,7 +21,7 @@ export default function FavoritesPage() {
          {count === 0 ? (
             <article className={styles.empty}>
                <p>
-                  You haven’t added any books yet. Try the <Link to="/search?query=">search</Link> or pick a <Link to="/category/Fiction">category</Link>
+                  You haven’t added any books yet. Try the <Link to="/search?query=">search</Link> or explore <Link to="/explore">popular books</Link>
                </p>
                <NoDataFound />
             </article>
