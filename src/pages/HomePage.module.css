@@ -3,7 +3,6 @@
 .landingPage {
    display: flex;
    flex-direction: column;
-   height: calc(100vh - 4rem);
    width: 100%;
    margin-bottom: auto;
    padding: 1rem 4rem;
@@ -21,7 +20,7 @@
 .landingText h2 {
    font-size: 4.5rem;
    margin-bottom: 1.5rem;
-   font-weight: 600;
+   font-weight: 500;
    line-height: 1.1;
    color: var(--text);
 }
@@ -59,7 +58,7 @@
 
 @media screen and (max-width: 768px) {
    .landingPage {
-      padding: 1rem;
+      padding: 0 1rem;
    }
    .landingHero {
       flex-direction: column;

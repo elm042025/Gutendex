@@ -34,7 +34,7 @@ src/
 ├── assets/ # SVG icons, logos, placeholders
 ├── components/ # Header, Footer, BookCard, Loading, etc.
 ├── hooks/ # useFavorites.js (localStorage persistence)
-├── pages/ # HomePage, SearchResultsPage, CategoryPage, FavoritesPage
+├── pages/ # HomePage, SearchResultsPage, CategoryPage, FavoritesPage, etc.
 ├── App.jsx # Root layout (Header + Footer + Outlet)
 ├── main.jsx # Entry point, router setup
 └── index.css # Global styles
@@ -60,9 +60,13 @@ npm install
 
 ```bash
 npm run dev
+```
 
+```bash
 npm run build
+```
 
+```bash
 npm run deploy
 ```
 

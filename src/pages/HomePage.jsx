@@ -1,9 +1,10 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Link } from "react-router-dom";
+import QuoteRow from "../components/QuoteRow.jsx";
 
 // ! ------------- Styles ------------- !
 
 import styles from "./HomePage.module.css";
-import { Link } from "react-router-dom";
 
 // ! ---------------------- !
 
@@ -35,6 +36,7 @@ export default function HomePage() {
                />
             </section>
          </article>
+         <QuoteRow title="Voices that inspire" />
       </section>
    );
 }
