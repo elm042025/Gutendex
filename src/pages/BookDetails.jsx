@@ -74,7 +74,7 @@ export default function BookDetail() {
    return (
       <article className={styles.bookDetailsPage}>
          <Link
-            to="/"
+            to=".."
             className={styles.backLink}
          >
             ← Back

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useFavorites } from "../context/FavoritesContext";
 import BookCard from "../components/BookCard";
 import NoDataFound from "../components/NoDataFound";
-import styles from "./FavoritesPage.module.css"; // optional, see CSS below
+import styles from "./FavoritesPage.module.css";
 
 export default function FavoritesPage() {
    const { favorites } = useFavorites();
