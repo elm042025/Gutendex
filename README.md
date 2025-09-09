@@ -1,4 +1,4 @@
-# 📚 Book Voyager
+# 📚 Book Voyager / Gutendex 
 
 > A React app that lets you search, explore, and favorite classic literature using the [Gutendex API](https://gutendex.com/).
 
