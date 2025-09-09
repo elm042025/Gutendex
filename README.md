@@ -32,6 +32,7 @@
 
 src/
 ├── assets/ # SVG icons, logos, placeholders
+|
 ├── components/ # Header, Footer, BookCard, Loading, etc.
 ├── hooks/ # useFavorites.js (localStorage persistence)
 ├── pages/ # HomePage, SearchResultsPage, CategoryPage, FavoritesPage, etc.
