@@ -1,4 +1,4 @@
-# 📚 Book Voyager
+# 📚 Book Voyager / Gutendex 
 
 > A React app that lets you search, explore, and favorite classic literature using the [Gutendex API](https://gutendex.com/).
 
@@ -51,7 +51,7 @@ src/
 ### Install
 
 ```bash
-git clone https://github.com/yourusername/Gutendex.git
+git clone https://github.com/elm042025/Gutendex.git
 cd Gutendex
 npm install
 ```
