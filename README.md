@@ -31,14 +31,13 @@
 ## 📁 Project Structure
 
 src/
-├── assets/ # SVG icons, logos, placeholders
-|
-├── components/ # Header, Footer, BookCard, Loading, etc.
-├── hooks/ # useFavorites.js (localStorage persistence)
-├── pages/ # HomePage, SearchResultsPage, CategoryPage, FavoritesPage, etc.
-├── App.jsx # Root layout (Header + Footer + Outlet)
-├── main.jsx # Entry point, router setup
-└── index.css # Global styles
+├── assets/ # SVG icons, logos, placeholders 
+├── components/ # Header, Footer, BookCard, Loading, etc. 
+├── hooks/ # useFavorites.js (localStorage persistence) 
+├── pages/ # HomePage, SearchResultsPage, CategoryPage, FavoritesPage, etc. 
+├── App.jsx # Root layout (Header + Footer + Outlet) 
+├── main.jsx # Entry point, router setup 
+└── index.css # Global styles 
 
 ---
 
