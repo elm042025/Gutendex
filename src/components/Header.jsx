@@ -89,7 +89,7 @@ export default function Header() {
       return () => window.removeEventListener("scroll", onScroll);
    }, []);
 
-   //! --------------------------Render-------------------------- !
+   //! --------------------------Render------------------------!
 
    return (
       <header>
