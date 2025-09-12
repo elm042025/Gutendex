@@ -69,11 +69,11 @@ export default function Header() {
          const last = lastYRef.current;
          const delta = Math.abs(y - last);
 
-         if (delta < 10) return; // ignore tiny jitters
+         if (delta < 20) return; // ignore tiny jitters
 
          const goingDown = y > last;
 
-         if (goingDown && y > 100) {
+         if (goingDown && y > 250) {
             setNavHidden(true); // hide when scrolling down past header
          } else {
             setNavHidden(false); // show on any upward scroll (or near top)
