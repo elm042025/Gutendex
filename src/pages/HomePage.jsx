@@ -24,7 +24,7 @@ export default function HomePage() {
                   to="/explore"
                   className={styles.cta}
                >
-                  Start Exploring
+                  Browse 70,000+ Books
                </Link>
             </section>
 
