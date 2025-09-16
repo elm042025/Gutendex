@@ -43,13 +43,7 @@ export default function Footer() {
                   </li>
                   {/* If your routes use /category/:topic, these are example deep-links */}
                   <li>
-                     <Link to="/category/Fiction">Fiction</Link>
-                  </li>
-                  <li>
-                     <Link to="/category/Mystery">Mystery</Link>
-                  </li>
-                  <li>
-                     <Link to="/category/Philosophy">Philosophy</Link>
+                     <Link to="/explore">Explore 70K+ books</Link>
                   </li>
                </ul>
             </nav>

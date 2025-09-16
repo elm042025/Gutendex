@@ -35,8 +35,7 @@
    display: inline-block;
    margin-top: 2rem;
    padding: 0.5rem 1rem;
-   background-color: var(--accent);
-   border: 1px solid var(--accent);
+   background-color: var(--muted);
    color: var(--panel);
    font-size: 1.1rem;
    font-weight: 500;
@@ -46,7 +45,9 @@
    cursor: pointer;
 }
 .cta:hover {
-   background-color: var(--muted);
+   background-color: var(--text);
+   text-decoration: underline 2px var(--accent);
+   text-underline-offset: 2px;
 }
 
 .landingAnimation {
