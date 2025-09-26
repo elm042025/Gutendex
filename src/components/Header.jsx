@@ -18,7 +18,6 @@ import adventure from "../assets/adventure.svg";
 import tragedy from "../assets/tragedy.svg";
 import war from "../assets/war.svg";
 import philosophy from "../assets/philosophy.svg";
-import star from "../assets/star.svg";
 
 // ! ------------- Styles ------------- !
 
