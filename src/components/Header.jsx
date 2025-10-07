@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 // ! ------------- Assets ------------- !
@@ -26,145 +26,172 @@ import styles from "./Header.module.css";
 //! --------------------------Header-------------------------- !
 
 export default function Header() {
-   const navigate = useNavigate();
-   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchQuery, setSearchQuery] = useState("");
 
-   //! ------ Handle search form submit by navigating to search results (no api call yet) ------ !
 
-   function handleSearchFormSubmit(event) {
-      event.preventDefault();
-      if (searchQuery.trim()) {
-         navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
-         setSearchQuery("");
+  //! ------ Handle search form submit by navigating to search results (no api call yet) ------ !
+
+  function handleSearchFormSubmit(event) {
+    event.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery("");
+    }
+  }
+  //! ------  required categories to map over for less repetition ------ !
+  const categories = [
+    { name: "Fiction", icon: fiction },
+    { name: "Mystery", icon: mystery },
+    { name: "Thriller", icon: thriller },
+    { name: "Romance", icon: romance },
+    { name: "Fantasy", icon: fantasy },
+    { name: "Morality", icon: morality },
+    { name: "Society", icon: society },
+    { name: "Power", icon: power },
+    { name: "Justice", icon: justice },
+    { name: "Adventure", icon: adventure },
+    { name: "Tragedy", icon: tragedy },
+    { name: "War", icon: war },
+    { name: "Philosophy", icon: philosophy },
+  ];
+
+   //! ------- Auto-focus search input when on search page ------- !
+   
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    if (location.pathname === '/search' && searchInputRef.current) {
+      // Small delay to ensure page has rendered
+      const timer = setTimeout(() => {
+        searchInputRef.current.focus();
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
+
+  //! ------- hidden nav bar on scroll down, shows on scroll up ------- !
+
+  const [navHidden, setNavHidden] = useState(false);
+  const lastYRef = useRef(typeof window !== "undefined" ? window.scrollY : 0);
+  const upwardScrollDistanceRef = useRef(0);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    function onScroll() {
+      const y = window.scrollY;
+      const last = lastYRef.current;
+      const delta = Math.abs(y - last);
+
+      if (delta < 30) return; // ignore tiny jitters
+
+      const goingDown = y > last;
+      const goingUp = y < last;
+
+      if (goingDown && y > 300) {
+        setNavHidden(true); // hide when scrolling down past header
+        upwardScrollDistanceRef.current = 0; // reset upward scroll counter
+      } else if (goingUp) {
+        // Accumulate upward scroll distance
+        upwardScrollDistanceRef.current += last - y;
+
+        // Show nav only after scrolling up a significant amount (150px) or near top
+        if (upwardScrollDistanceRef.current > 150 || y < 300) {
+          setNavHidden(false);
+        }
       }
-   }
-   //! ------  required categories to map over for less repetition ------ !
-   const categories = [
-      { name: "Fiction", icon: fiction },
-      { name: "Mystery", icon: mystery },
-      { name: "Thriller", icon: thriller },
-      { name: "Romance", icon: romance },
-      { name: "Fantasy", icon: fantasy },
-      { name: "Morality", icon: morality },
-      { name: "Society", icon: society },
-      { name: "Power", icon: power },
-      { name: "Justice", icon: justice },
-      { name: "Adventure", icon: adventure },
-      { name: "Tragedy", icon: tragedy },
-      { name: "War", icon: war },
-      { name: "Philosophy", icon: philosophy },
-   ];
 
-   //! ------- hidden nav bar on scroll down, shows on scroll up ------- !
+      lastYRef.current = y; // always update the ref
+    }
 
-   const [navHidden, setNavHidden] = useState(false);
-   const lastYRef = useRef(typeof window !== "undefined" ? window.scrollY : 0);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-   useEffect(() => {
-      if (typeof window === "undefined") return;
+    //!------ Cleanup listener on unmount ----- !
 
-      function onScroll() {
-         const y = window.scrollY;
-         const last = lastYRef.current;
-         const delta = Math.abs(y - last);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-         if (delta < 30) return; // ignore tiny jitters
+  //! --------------------------Render------------------------!
 
-         const goingDown = y > last;
+  return (
+    <header>
+      <section className={styles.headerTop}>
+        {/* -----Logo img, h1 and p----- */}
 
-         if (goingDown && y > 300) {
-            setNavHidden(true); // hide when scrolling down past header
-         } else {
-            setNavHidden(false); // show on any upward scroll (or near top)
-         }
-
-         lastYRef.current = y; // always update the ref
-      }
-
-      window.addEventListener("scroll", onScroll, { passive: true });
-
-      //!------ Cleanup listener on unmount ----- !
-
-      return () => window.removeEventListener("scroll", onScroll);
-   }, []);
-
-   //! --------------------------Render------------------------!
-
-   return (
-      <header>
-         <section className={styles.headerTop}>
-            {/* -----Logo img, h1 and p----- */}
-
-            <section className={styles.logo}>
-               <Link to="/">
-                  <img
-                     src={Logo}
-                     alt="logo icon of 2 books on the left and a tilted book on the right"
-                  />
-                  <section className={styles.logoText}>
-                     <h1>Book Voyager</h1>
-                     <p>Your gateway to classic literature</p>
-                  </section>
-               </Link>
+        <section className={styles.logo}>
+          <Link to="/">
+            <img
+              src={Logo}
+              alt="logo icon of 2 books on the left and a tilted book on the right"
+            />
+            <section className={styles.logoText}>
+              <h1>Book Voyager</h1>
+              <p>Your gateway to classic literature</p>
             </section>
+          </Link>
+        </section>
 
-            {/* ----- Search button/form  ----- */}
+        {/* ----- Search button/form  ----- */}
 
-            <section className={styles.headerSearchForm}>
-               <form onSubmit={handleSearchFormSubmit}>
-                  <button
-                     type="submit"
-                     aria-label="Search"
-                  >
-                     <img
-                        src={blackSearchIcon}
-                        alt=""
-                        aria-hidden="true"
-                     />
-                  </button>
-                  <input
-                     type="text"
-                     placeholder="Search for a book or an author..."
-                     aria-label="Search for a book or an author..."
-                     value={searchQuery}
-                     onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-               </form>
-            </section>
-
-            {/* ----- Favorites link ----- */}
-
-            <Link
-               to="/favorites"
-               className={styles.favoritesLink}
+        <section className={styles.headerSearchForm}>
+          <form onSubmit={handleSearchFormSubmit}>
+            <button
+              type="submit"
+              aria-label="Search"
             >
-               ★ Favorites
-            </Link>
-         </section>
+              <img
+                src={blackSearchIcon}
+                alt=""
+                aria-hidden="true"
+              />
+            </button>
+            <input
+               ref={searchInputRef}
+              type="text"
+              placeholder="Search for a book or an author..."
+              aria-label="Search for a book or an author..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </form>
+        </section>
 
-         {/* -----Nav links----- */}
+        {/* ----- Favorites link ----- */}
 
-         <section
-            className={`${styles.headerNav}
+        <Link
+          to="/favorites"
+          className={styles.favoritesLink}
+        >
+          ★ Favorites
+        </Link>
+      </section>
+
+      {/* -----Nav links----- */}
+
+      <section
+        className={`${styles.headerNav}
          ${navHidden ? styles.hideNav : ""}`}
-         >
-            <nav aria-label="Book Categories">
-               <ul>
-                  {categories.map((category) => (
-                     <li key={category.name}>
-                        <NavLink to={`/category/${category.name}`}>
-                           <img
-                              src={category.icon}
-                              alt={""}
-                              aria-hidden="true"
-                           />
-                           {category.name}
-                        </NavLink>
-                     </li>
-                  ))}
-               </ul>
-            </nav>
-         </section>
-      </header>
-   );
+      >
+        <nav aria-label="Book Categories">
+          <ul>
+            {categories.map((category) => (
+              <li key={category.name}>
+                <NavLink to={`/category/${category.name}`}>
+                  <img
+                    src={category.icon}
+                    alt={""}
+                    aria-hidden="true"
+                  />
+                  {category.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </section>
+    </header>
+  );
 }
