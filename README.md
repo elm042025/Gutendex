@@ -29,7 +29,7 @@
 ---
 
 ## 📁 Project Structure
-
+```pgsql
 src/
 ├── assets/ # SVG icons, logos, placeholders 
 ├── components/ # Header, Footer, BookCard, Loading, etc. 
@@ -38,7 +38,7 @@ src/
 ├── App.jsx # Root layout (Header + Footer + Outlet) 
 ├── main.jsx # Entry point, router setup 
 └── index.css # Global styles 
-
+```
 ---
 
 ## 🚀 Getting Started
